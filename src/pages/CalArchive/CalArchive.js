@@ -140,18 +140,18 @@ export default function CalArchive({ navigation }) {
                 borderWidth: 0.4,
                 borderColor: colors.gray,
                 borderRadius: 4,
-                width: 48,
-                height: 78,
+                width: 44,
+                height: 80,
                 fontFamily: "Manrope-Bold",
               }}>
                 <Text style={{marginTop: 6, color: state === 'disabled' ? colors.gray : colors.black, fontFamily: "Manrope-Bold", fontSize: 14 }}>
                   {date.day}
                 </Text>
                 {dayData && (
-                  <View style={{borderRadius: 4, borderTopLeftRadius: 0, borderTopRightRadius: 0 ,backgroundColor: colors.green}}>
+                  <View style={{borderRadius: 4, justifyContent: 'center', borderTopLeftRadius: 0, height: 44, width: 44, borderTopRightRadius: 0 ,backgroundColor: colors.green}}>
                     <Text style={{
-                      fontFamily: "Manrope-Bold", fontSize: 14, color: colors.white,
-                      marginTop: 2, marginBottom: 2, textAlign: 'center'
+                      fontFamily: "Manrope-Bold", fontSize: 12, color: colors.white,
+                      textAlign: 'center'
                     }}>
                       {dayData.totalCalories} Kcal
                     </Text>

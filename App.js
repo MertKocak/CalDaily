@@ -75,7 +75,7 @@ const App = () => {
               />
             ),
             headerLeft: () => (
-              <TouchableOpacity
+              <TouchableOpacity style={{width: 36, height: 36, justifyContent: 'center'}}
                 onPress={() => navigation.navigate('UserPage')}
               >
                 <Image
@@ -85,17 +85,17 @@ const App = () => {
               </TouchableOpacity>
             ),
             headerRight: () => (
-              <TouchableOpacity
+              <TouchableOpacity style={{width: 36, height: 36, justifyContent: 'center'}}
                 onPress={() =>  navigation.setParams({ openModal: true })}
               >
                  <Image
                 source={require('./assets/icons/info.png')} // Resmin yolu
-                style={{ width: 18, height: 18, tintColor: colors.green, resizeMode: 'contain' }} // Boyutlandırma
+                style={{ width: 18, height: 18, tintColor: colors.green, resizeMode: 'contain', marginLeft: 16 }} // Boyutlandırma
               />
               </TouchableOpacity>
             ),
             headerStyle: {
-              backgroundColor: colors.Regulargreen,
+              backgroundColor: colors.lightgreen,
             },
             headerTitleAlign: "center",
             headerShadowVisible: false,
@@ -111,7 +111,7 @@ const App = () => {
               />
             ),
             headerLeft: () => (
-              <TouchableOpacity
+              <TouchableOpacity style={{width: 36, height: 36, justifyContent: 'center'}}
                 onPress={() => navigation.replace('HomePage')}
               >
                 <Image
@@ -122,7 +122,7 @@ const App = () => {
             ),
 
             headerStyle: {
-              backgroundColor: colors.Regulargreen,
+              backgroundColor: colors.lightgreen,
             },
             headerTitleAlign: "center",
             headerTitleStyle: {
@@ -141,7 +141,7 @@ const App = () => {
               />
             ),
             headerLeft: () => (
-              <TouchableOpacity
+              <TouchableOpacity style={{width: 36, height: 36, justifyContent: 'center'}}
                 onPress={() => navigation.goBack()}
               >
                  <Image
@@ -151,7 +151,7 @@ const App = () => {
               </TouchableOpacity>
             ),
             headerStyle: {
-              backgroundColor: colors.Regulargreen,
+              backgroundColor: colors.lightgreen,
             },
             headerTitleAlign: "center",
             headerTitleStyle: {
@@ -170,7 +170,7 @@ const App = () => {
               />
             ),
             headerLeft: () => (
-              <TouchableOpacity
+              <TouchableOpacity style={{width: 36, height: 36, justifyContent: 'center'}}
                 onPress={() => navigation.goBack()}
               >
                  <Image
@@ -180,17 +180,17 @@ const App = () => {
               </TouchableOpacity>
             ),
             headerRight: () => (
-              <TouchableOpacity
+              <TouchableOpacity style={{width: 36, height: 36, justifyContent: 'center'}}
                 onPress={() => navigation.replace('HomePage')}
               >
                  <Image
                 source={require('./assets/icons/home.png')} // Resmin yolu
-                style={{ width: 16, height: 16, tintColor: colors.green, resizeMode: 'contain' }} // Boyutlandırma
+                style={{ width: 16, height: 16, tintColor: colors.green, resizeMode: 'contain', marginLeft: 16 }} // Boyutlandırma
               />
               </TouchableOpacity>
             ),
             headerStyle: {
-              backgroundColor: colors.Regulargreen,
+              backgroundColor: colors.lightgreen,
             },
             headerTitleAlign: "center",
             headerTitleStyle: {
@@ -209,7 +209,7 @@ const App = () => {
               />
             ),
             headerLeft: () => (
-              <TouchableOpacity
+              <TouchableOpacity style={{width: 36, height: 36, justifyContent: 'center'}}
                 onPress={() => navigation.goBack()}
               >
                  <Image
@@ -219,17 +219,17 @@ const App = () => {
               </TouchableOpacity>
             ),
             headerRight: () => (
-              <TouchableOpacity
+              <TouchableOpacity style={{width: 36, height: 36, justifyContent: 'center'}}
                 onPress={() => navigation.replace('HomePage')}
               >
                  <Image
                 source={require('./assets/icons/home.png')} // Resmin yolu
-                style={{ width: 16, height: 16, tintColor: colors.green, resizeMode: 'contain' }} // Boyutlandırma
+                style={{ width: 16, height: 16, tintColor: colors.green, resizeMode: 'contain', marginLeft: 16 }} // Boyutlandırma
               />
               </TouchableOpacity>
             ),
             headerStyle: {
-              backgroundColor: colors.Regulargreen,
+              backgroundColor: colors.lightgreen,
             },
             headerTitleAlign: "center",
             headerTitleStyle: {

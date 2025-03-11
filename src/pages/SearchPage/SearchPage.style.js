@@ -12,34 +12,31 @@ export default StyleSheet.create({
         justifyContent: 'center',
       },
       input: {
-        padding: 10,
-        marginBottom: 20,
+        padding: 12,
+        marginBottom: 16,
         borderRadius: 6,
         borderWidth: 0.6,
         borderColor: colors.gray,
         marginTop: 0,
         backgroundColor: colors.lightgreen,
-        height: 44,
+        height: 48,
         width: windowWidth - 122,
         borderTopRightRadius: 0,
         borderBottomRightRadius: 0,
+        color: colors.black
       },
       button: {
         width: 88,
-        //marginLeft: 4,
         backgroundColor: colors.green,
         alignContent: 'center',
         borderTopLeftRadius: 0,
         borderBottomLeftRadius: 0,
-        height: 44,
+        height: 48,
         borderWidth: 0.6,
         borderColor: colors.gray,
         borderLeftWidth: 0,
         borderRadius: 6,
-        textAlign: 'center',
-        alignSelf: 'center',
         alignItems: 'center',
-        textAlignVertical: 'center',
         justifyContent: 'center',
       },
       addButton: {
@@ -56,11 +53,13 @@ export default StyleSheet.create({
         justifyContent: 'center',
       },
       error: {
-        color: 'red',
+        color: colors.gray,
         marginTop: 10,
+        textAlign: "center"
       },
       resultContainer: {
-        marginTop: -16,
+        marginTop: 2,
+        backgroundColor: colors.white
       },
       result: {
         backgroundColor: colors.lightgreen,

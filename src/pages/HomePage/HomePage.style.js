@@ -24,14 +24,13 @@ export default StyleSheet.create({
         borderColor: colors.gray,
     },
     containerTitle: {
-        textAlign: 'left',
+        textAlign: 'center',
         fontSize: 14,
         color: colors.green,
         marginLeft: 12,
-        marginTop: -12,
+        marginTop: -13,
         backgroundColor: colors.white,
-        width: 168,
-        paddingLeft: 6,
+        width: 190,
         marginBottom: 8,
         fontFamily: "Manrope-Bold"
 
@@ -43,7 +42,7 @@ export default StyleSheet.create({
         borderTopLeftRadius: 0,
         borderTopRightRadius: 0,
         width: windowWidth - 31,
-        height: 48,
+        height: 56,
         flexDirection: "row",
         justifyContent: 'space-between',
         padding: 12,
@@ -53,12 +52,13 @@ export default StyleSheet.create({
         textAlign: 'left',
         fontSize: 14,
         color: colors.white,
-        fontFamily: "Manrope-Bold"
+        fontFamily: "Manrope-Bold",
+        marginTop: 2,
     },
     addButton: {
         marginTop: 12,
         backgroundColor: colors.green,
-        borderWidth: 0.8,
+        borderWidth: 0.6,
         borderColor: colors.green,
         borderRadius: 8,
         width: windowWidth - 64,

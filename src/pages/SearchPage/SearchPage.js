@@ -105,23 +105,27 @@ export default function SearchPage({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <View style={{ flexDirection: 'row' }}>
+      <Text style={{
+        fontSize: 14, marginBottom: -10, marginTop: -4, color: colors.green, textAlign: 'center', fontFamily: "Manrope-Bold"
+      }}>
+        Besin Ekle
+      </Text>
+      <View style={{ flexDirection: 'row', height: 48, marginTop: 24 }}>
         <TextInput
           style={styles.input}
-          placeholder="Besin adı girin..."
+          placeholder="Besin ara..."
+          placeholderTextColor={colors.gray}
           value={foodName}
           onChangeText={setFoodName}
         />
-        <TouchableOpacity onPress={fetchNutrition}>
-          <View style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={fetchNutrition}>
             <Image
-              source={require('../../../assets/icons/searchicon.png')} // Resmin yolu
-              style={{ width: 20, height: 20, tintColor: colors.white }} // Boyutlandırma
+              source={require('../../../assets/icons/searchicon.png')}
+              style={{ width: 20, height: 20, tintColor: colors.white }}
             />
-          </View>
         </TouchableOpacity>
       </View>
-      {loading && <View style={{ flex: 1, justifyContent: 'flex-start', marginTop: 16, alignItems: 'center' }}>
+      {loading && <View style={{marginTop: 32, alignItems: 'center' }}>
         <ActivityIndicator size="large" color="#00AB58" />
       </View>}
       {error ? <Text style={styles.error}>{error}</Text> : null}

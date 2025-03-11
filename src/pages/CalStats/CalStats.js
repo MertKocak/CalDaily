@@ -91,7 +91,7 @@ export default function CalStats({ navigation }) {
   return (
     <ScrollView style={{ flex: 1, padding: 16, backgroundColor: colors.white }}>
       <Text style={{
-        fontSize: 14, marginBottom: 16, marginTop: -4, color: colors.green, textAlign: 'center', fontFamily: "Manrope-B"
+        fontSize: 14, marginBottom: 16, marginTop: -4, color: colors.green, textAlign: 'center', fontFamily: "Manrope-Bold"
       }}>
         Kalori Grafiğim
       </Text>
@@ -103,12 +103,12 @@ export default function CalStats({ navigation }) {
             key={filter}
             style={{
               backgroundColor: selectedFilter === filter ? colors.green : colors.lightgreen,
-              padding: 8,
+              padding: 6,
               borderRadius: 6,
               fontFamily: "Manrope-Bold",
               borderWidth: 0.4,
               borderColor: colors.gray,
-              paddingHorizontal: 18,
+              paddingHorizontal: 12,
               justifyContent: 'space-between'
             }}
             onPress={() => setSelectedFilter(filter)}
@@ -155,10 +155,10 @@ export default function CalStats({ navigation }) {
       {/* Ortalama Kalori Bilgisi */}
       <View style={{
         marginTop: 8, borderWidth: 0.4,
-        borderColor: colors.gray, justifyContent: 'space-between', flexDirection: 'row', padding: 16, backgroundColor: colors.lightgreen, borderRadius: 6
+        borderColor: colors.gray, justifyContent: 'center', flexDirection: 'column', padding: 16, backgroundColor: colors.lightgreen, borderRadius: 6
       }}>
-        <Text style={{ fontSize: 14, color: colors.black, fontFamily: "Manrope-Medium" }}>Tüketilen ortalama kalori miktarı:</Text>
-        <Text style={{ fontSize: 14, color: colors.green, fontFamily: "Manrope-Medium" }}>
+        <Text style={{ fontSize: 14, color: colors.black, fontFamily: "Manrope-Medium", textAlign: "center"}}>Tüketilen ortalama kalori miktarı</Text>
+        <Text style={{ fontSize: 14, color: colors.green, fontFamily: "Manrope-Medium", marginTop: 4, textAlign: "center" }}>
           {averageCalories} Kcal
         </Text>
       </View>

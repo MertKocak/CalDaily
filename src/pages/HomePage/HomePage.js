@@ -134,10 +134,10 @@ export default function HomePage({ navigation, route }) {
       </View>
       <View style={styles.sumBox}>
         <Text style={styles.sumText}>
-          Bugün tüketilen toplam kalori miktarı:
+          Bugün tüketilen toplam kalori:
         </Text>
         <Text style={styles.sumText}>
-          {totalKcal}
+          {totalKcal} Kcal
         </Text>
       </View>
       <TouchableOpacity onPress={() => navigation.navigate('SearchPage', { data: userdata })}>
