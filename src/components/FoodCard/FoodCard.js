@@ -17,7 +17,7 @@ export default function FoodCard({ navigation, data }) {
 
     const deletefunction = (id) => {
         axios
-            .delete(`http://10.0.2.2:5000/foods/${id}`)
+            .delete(`https://caldaily-backend.onrender.com/foods/${id}`)
             .then(res => {
                 ToastAndroid.show('Alışkanlık silindi!', ToastAndroid.SHORT);
                 navigation.replace('HomePage') // Ana sayfaya yönlendirme

@@ -47,7 +47,7 @@ export default function RegisterPage({ navigation }) {
       password,
     };
     try {
-      const response = await axios.post("http://10.0.2.2:5000/register", userData);
+      const response = await axios.post("https://caldaily-backend.onrender.com/register", userData);
       if (response.status === 201) {
         ToastAndroid.show("Kayıt başarılı!", ToastAndroid.SHORT);
         navigation.dispatch(

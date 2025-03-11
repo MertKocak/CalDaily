@@ -25,7 +25,7 @@ export default function UserPage({ navigation }) {
     const fetchDataAll = async () => {
       const token = await AsyncStorage.getItem("token");
       try {
-        await axios.post('http://10.0.2.2:5000/userdata', { token: token }).then(res => setUserdata(res.data.data));
+        await axios.post('https://caldaily-backend.onrender.com/userdata', { token: token }).then(res => setUserdata(res.data.data));
       } catch (error) {
         if (error.response) {
           console.error('Response Error:', error.response.data);

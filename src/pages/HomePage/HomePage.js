@@ -21,7 +21,7 @@ export default function HomePage({ navigation, route }) {
     const fetchData = async () => {
       setLoading(true);
       const token = await AsyncStorage.getItem("token");
-      await axios.post('http://10.0.2.2:5000/userdata', { token: token }).then(res => setUserdata(res.data.data)).catch(error => {
+      await axios.post('https://caldaily-backend.onrender.com/userdata', { token: token }).then(res => setUserdata(res.data.data)).catch(error => {
         if (error.response) {
           alert('Sunucu hatası: ' + error.response.data ? error.response.data : "Sunucuya bağlanılamıyor.");
         } else {
@@ -31,7 +31,7 @@ export default function HomePage({ navigation, route }) {
     };
     const fetchFood = async () => {
       try {
-        const response = await axios.get(`http://10.0.2.2:5000/foods/${userdata._id}`, {
+        const response = await axios.get(`https://caldaily-backend.onrender.com/foods/${userdata._id}`, {
           params: { userId: userdata._id, date: new Date().toISOString() },
         });
         const reversedData = await response.data.reverse();

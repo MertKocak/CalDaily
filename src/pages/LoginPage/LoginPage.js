@@ -35,7 +35,7 @@ export default function LoginPage({ navigation }) {
     }
     try {
       var email = email.toLowerCase();
-      const response = await axios.post('http://10.0.2.2:5000/login', {
+      const response = await axios.post('https://caldaily-backend.onrender.com/login', {
         email,
         password,
       });

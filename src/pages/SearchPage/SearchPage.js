@@ -24,7 +24,7 @@ export default function SearchPage({ navigation }) {
   useEffect(() => {
     const fetchData = async () => {
       const token = await AsyncStorage.getItem("token");
-      await axios.post('http://10.0.2.2:5000/userdata', { token: token }).then(res => setUserdata(res.data.data)).catch(error => {
+      await axios.post('https://caldaily-backend.onrender.com/userdata', { token: token }).then(res => setUserdata(res.data.data)).catch(error => {
         if (error.response) {
           alert('Sunucu hatası: ' + error.response.data ? error.response.data : "Sunucuya bağlanılamıyor.");
         } else {
@@ -84,7 +84,7 @@ export default function SearchPage({ navigation }) {
       createdAt,
       userId,
     };
-    axios.post("http://10.0.2.2:5000/foods", foodData).then(ToastAndroid.show('Besin eklendi!', ToastAndroid.SHORT)).catch(e => console.log(e));
+    axios.post("https://caldaily-backend.onrender.com/foods", foodData).then(ToastAndroid.show('Besin eklendi!', ToastAndroid.SHORT)).catch(e => console.log(e));
   };
 
   const [counters, setCounters] = useState({});
