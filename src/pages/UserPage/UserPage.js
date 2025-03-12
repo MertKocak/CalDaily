@@ -11,7 +11,7 @@ import DatePicker from 'react-native-date-picker';
 import { format } from "date-fns";
 import { tr } from "date-fns/locale"; // Türkçe dil desteği
 import PushNotification from "react-native-push-notification";
-import { Platform,PermissionsAndroid } from 'react-native';
+import { Platform, PermissionsAndroid } from 'react-native';
 
 export default function UserPage({ navigation }) {
   const [userdata, setUserdata] = useState('');
@@ -42,28 +42,28 @@ export default function UserPage({ navigation }) {
   }, []);
 
   const requestNotificationPermission = async () => {
-    if(Platform.OS ==="android"){
+    if (Platform.OS === "android") {
       try {
         PermissionsAndroid.check('android.permission.POST_NOTIFICATIONS').then(
           response => {
-            if(!response){
-              PermissionsAndroid.request('android.permission.POST_NOTIFICATIONS',{
-                  title: 'Notification',
-                  message:
-                    'App needs access to your notification ' +
-                    'so you can get Updates',
-                  buttonNeutral: 'Ask Me Later',
-                  buttonNegative: 'Cancel',
-                  buttonPositive: 'OK',
+            if (!response) {
+              PermissionsAndroid.request('android.permission.POST_NOTIFICATIONS', {
+                title: 'Notification',
+                message:
+                  'App needs access to your notification ' +
+                  'so you can get Updates',
+                buttonNeutral: 'Ask Me Later',
+                buttonNegative: 'Cancel',
+                buttonPositive: 'OK',
               })
             }
           }
         ).catch(
           err => {
-            console.log("Notification Error=====>",err);
+            console.log("Notification Error=====>", err);
           }
         )
-      } catch (err){
+      } catch (err) {
         console.log(err);
       }
     }
@@ -87,7 +87,10 @@ export default function UserPage({ navigation }) {
   }
 
   const [date, setDate] = useState(new Date());
-  const [notDate, setNotDate] = useState("Bildirim saati ayarlanmadı.");
+  const [notDate, setNotDate] = useState("Bildirim saati ayarlanmadı");
+
+  const [calorie, setCalorie] = useState(0);
+  const [notCalorie, setNotCalorie] = useState("Kalori hesaplanmadı");
 
   // Veriyi AsyncStorage'a kaydetme
   const saveData = async (newDate) => {
@@ -116,7 +119,7 @@ export default function UserPage({ navigation }) {
   const handleRemoveNot = () => {
     PushNotification.cancelAllLocalNotifications()
     setModalVisibleDate(false);
-    saveData("Bildirim saati ayarlanmadı.")
+    saveData("Bildirim saati ayarlanmadı")
     ToastAndroid.show('Hatırlatıcı İptal Edildi', ToastAndroid.SHORT)
 
   }
@@ -191,7 +194,7 @@ export default function UserPage({ navigation }) {
               <TouchableOpacity
                 style={styles.buttonClose}
                 onPress={() => setModalVisibleDate(false)}>
-               <Image style={styles.closeButton} source={require("../../../assets/icons/close.png")} />
+                <Image style={styles.closeButton} source={require("../../../assets/icons/close.png")} />
               </TouchableOpacity>
             </View>
             <View style={styles.dateContainer}>
@@ -217,11 +220,35 @@ export default function UserPage({ navigation }) {
           <Image style={{ height: 20, width: 20, tintColor: colors.green }}
             source={require('../../../assets/icons/user.png')} />
         </View>
-        <View style = {{flexDirection: 'column'}}>
-          <Text style={[styles.title, { color: colors.white, marginTop: -2}]}>{userdata.username}</Text>
+        <View style={{ flexDirection: 'column' }}>
+          <Text style={[styles.title, { color: colors.white, marginTop: -2 }]}>{userdata.username}</Text>
           <Text style={[styles.title, { color: colors.white, marginTop: -2 }]}>{userdata.email}</Text>
         </View>
       </View>
+      <TouchableOpacity onPress={() => navigation.navigate('CalCalPage')}>
+        <View style={[styles.NavCont, { flexDirection: 'column' }]}>
+          <View style={{ flexDirection: "row", width: Dimensions.get('window').width - 64, justifyContent: 'space-between', alignItems: 'center' }}>
+            <View style={{ flexDirection: "column" }}>
+              <Text style={[styles.title]} >Kalori Hesaplama</Text>
+              <Text style={[styles.desc]} >Günlük alman gereken kalori miktarını buradan hesaplayabilirsin</Text>
+            </View>
+            <Image style={{ height: 18, width: 18, marginTop: -24, tintColor: colors.green, }}
+              source={require('../../../assets/icons/bell.png')} />
+          </View>
+          <View style={{
+            backgroundColor: colors.white,
+            borderWidth: 0.2,
+            borderColor: colors.gray,
+            padding: 8,
+            marginTop: 8,
+            marginLeft: -2,
+            borderRadius: 4,
+            width: Dimensions.get('window').width - 62
+          }}>
+            <Text style={[styles.desc, { marginTop: -2, fontFamily: "Manrope-Medium" }]}>{notCalorie}</Text>
+          </View>
+        </View>
+      </TouchableOpacity>
       <TouchableOpacity onPress={() => setModalVisibleDate(true)}>
         <View style={[styles.NavCont, { flexDirection: 'column' }]}>
           <View style={{ flexDirection: "row", width: Dimensions.get('window').width - 64, justifyContent: 'space-between', alignItems: 'center' }}>

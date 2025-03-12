@@ -145,7 +145,7 @@ export default function HomePage({ navigation, route }) {
           width: Dimensions.get("window").width - 32}]}>
           <Image style={{ height: 16, width: 16, tintColor: colors.green, marginRight: 12 }}
             source={require('../../../assets/icons/plus.png')} />
-          <Text style={[styles.addButtonText, {color: colors.green}]}>
+          <Text style={[styles.addButtonText, {color: colors.green, marginBottom: 2}]}>
             Yeni Besin Ekle
           </Text>
         </View>

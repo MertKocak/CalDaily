@@ -10,6 +10,7 @@ import LoginPage from './src/pages/LoginPage/LoginPage';
 import UserPage from './src/pages/UserPage/UserPage';
 import CalArchive from './src/pages/CalArchive/CalArchive';
 import CalStats from './src/pages/CalStats/CalStats';
+import CalCalPage from './src/pages/CalCalPage/CalCalPage';
 import colors from './src/pages/colors';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -70,7 +71,7 @@ const App = () => {
           options={({ navigation }) => ({
             headerTitle: () => (
               <Image
-                source={require('./assets/images/logo.png')} // Resmin yolu
+                source={require('./assets/images/CalDaily.png')} // Resmin yolu
                 style={{ width: 100, height: 44, resizeMode: 'contain' }} // Boyutlandırma
               />
             ),
@@ -106,7 +107,7 @@ const App = () => {
           options={({ navigation }) => ({
             headerTitle: () => (
               <Image
-                source={require('./assets/images/logo.png')} // Resmin yolu
+                source={require('./assets/images/CalDaily.png')} // Resmin yolu
                 style={{ width: 100, height: 44, resizeMode: 'contain' }} // Boyutlandırma
               />
             ),
@@ -136,7 +137,7 @@ const App = () => {
           options={({ navigation }) => ({
             headerTitle: () => (
               <Image
-                source={require('./assets/images/logo.png')} // Resmin yolu
+                source={require('./assets/images/CalDaily.png')} // Resmin yolu
                 style={{ width: 100, height: 44, resizeMode: 'contain' }} // Boyutlandırma
               />
             ),
@@ -165,7 +166,7 @@ const App = () => {
           options={({ navigation }) => ({
             headerTitle: () => (
               <Image
-                source={require('./assets/images/logo.png')} // Resmin yolu
+                source={require('./assets/images/CalDaily.png')} // Resmin yolu
                 style={{ width: 100, height: 44, resizeMode: 'contain' }} // Boyutlandırma
               />
             ),
@@ -204,7 +205,7 @@ const App = () => {
           options={({ navigation }) => ({
             headerTitle: () => (
               <Image
-                source={require('./assets/images/logo.png')} // Resmin yolu
+                source={require('./assets/images/CalDaily.png')} // Resmin yolu
                 style={{ width: 100, height: 44, resizeMode: 'contain' }} // Boyutlandırma
               />
             ),
@@ -228,6 +229,45 @@ const App = () => {
               />
               </TouchableOpacity>
             ),
+            headerStyle: {
+              backgroundColor: colors.lightgreen,
+            },
+            headerTitleAlign: "center",
+            headerTitleStyle: {
+              color: colors.green,
+              fontSize: 16
+            },
+            headerShadowVisible: false,
+          })} />
+          <Stack.Screen name="CalCalPage"
+          component={CalCalPage}
+          options={({ navigation }) => ({
+            headerTitle: () => (
+              <Image
+                source={require('./assets/images/CalDaily.png')} // Resmin yolu
+                style={{ width: 100, height: 44, resizeMode: 'contain' }} // Boyutlandırma
+              />
+            ),
+            headerLeft: () => (
+              <TouchableOpacity style={{width: 36, height: 36, justifyContent: 'center'}}
+                onPress={() => navigation.goBack()}
+              >
+                 <Image
+                source={require('./assets/icons/arrow.png')} // Resmin yolu
+                style={{ width: 18,height: 18, tintColor: colors.green, resizeMode: 'contain' }} // Boyutlandırma
+              />
+              </TouchableOpacity>
+            ),
+           /*  headerRight: () => (
+              <TouchableOpacity style={{width: 36, height: 36, justifyContent: 'center'}}
+                onPress={() => navigation.replace('HomePage')}
+              >
+                 <Image
+                source={require('./assets/icons/home.png')} // Resmin yolu
+                style={{ width: 16, height: 16, tintColor: colors.green, resizeMode: 'contain', marginLeft: 16 }} // Boyutlandırma
+              />
+              </TouchableOpacity>
+            ), */
             headerStyle: {
               backgroundColor: colors.lightgreen,
             },
